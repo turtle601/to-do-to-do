@@ -14,7 +14,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <TodoTemplate />
+      <TodoTemplate>hi</TodoTemplate>
     </ThemeProvider>
   );
 };
