@@ -1,19 +1,20 @@
 import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
-import { useDarkMode } from './hooks/useDarkMode';
+import { useRecoilValue } from 'recoil';
 import { GlobalStyle } from './styles/global';
 
+import { themeSelector } from './atoms/atom.theme';
+
+import TodoTemplate from './components/TodoTemplate';
+
 const App = () => {
-  const [theme, toggleTheme] = useDarkMode();
+  const theme = useRecoilValue(themeSelector);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <button type="button" onClick={toggleTheme}>
-        +
-      </button>
-      hi
+      <TodoTemplate />
     </ThemeProvider>
   );
 };
