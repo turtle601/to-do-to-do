@@ -1,15 +1,19 @@
 import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
+import { useDarkMode } from './hooks/useDarkMode';
 import { GlobalStyle } from './styles/global';
-import { lightTheme, darkTheme } from './styles/theme';
 
 const App = () => {
-  return (
-    <ThemeProvider theme={darkTheme}>
-      <GlobalStyle />
+  const [theme, toggleTheme] = useDarkMode();
 
-      <div>hi</div>
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <button type="button" onClick={toggleTheme}>
+        +
+      </button>
+      hi
     </ThemeProvider>
   );
 };
