@@ -44,4 +44,9 @@ export const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+
+  body {
+    background-color: ${props => props.theme.color.bgColor};
+    color : ${props => props.theme.color.textColor};
+  }
 `;
