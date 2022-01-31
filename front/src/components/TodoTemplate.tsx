@@ -1,15 +1,10 @@
 import React from 'react';
-import { useDarkMode } from '../hooks/useDarkMode';
+import { ChildrenProps } from '../types/type.props';
 
-const TodoTemplate = () => {
-  const [theme, setTheme] = useDarkMode();
-
+const TodoTemplate = ({ children }: ChildrenProps) => {
   return (
     <>
-      TodoInput
-      <button type="button" onClick={setTheme}>
-        +
-      </button>
+      <div>{children}</div>
     </>
   );
 };
