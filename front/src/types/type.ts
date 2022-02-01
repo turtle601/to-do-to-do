@@ -10,5 +10,5 @@ export interface FormType {
 }
 
 export interface TodoProps {
-  todo: string;
+  todo: TodoType;
 }

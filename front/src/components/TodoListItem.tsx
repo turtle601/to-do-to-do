@@ -1,15 +1,27 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-
+import { useRecoilState } from 'recoil';
 import { MdRemoveCircleOutline } from 'react-icons/md';
+import { todosState } from '../atoms/atom.todo';
+
 import { VCenter } from '../layout/layout';
 import { TodoProps } from '../types/type';
 
 const TodoListItem = ({ todo }: TodoProps) => {
+  const [todos, setTodos] = useRecoilState(todosState);
+
+  const removeEvent = (id: number) => {
+    setTodos(
+      todos.filter(todo => {
+        return todo.id !== id;
+      }),
+    );
+  };
+
   return (
     <TodoItem>
-      <Text>{todo}</Text>
-      <RemoveButton>
+      <Text>{todo.text}</Text>
+      <RemoveButton onClick={() => removeEvent(todo.id)}>
         <MdRemoveCircleOutline />
       </RemoveButton>
     </TodoItem>

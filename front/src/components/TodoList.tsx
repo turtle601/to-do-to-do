@@ -28,7 +28,7 @@ const TodoList = () => {
   return (
     <List>
       {choiceTodo?.map(todo => {
-        return <TodoListItem key={todo.id} todo={todo.text} />;
+        return <TodoListItem key={todo.id} todo={todo} />;
       })}
     </List>
   );
