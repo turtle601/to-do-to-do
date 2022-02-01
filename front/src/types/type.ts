@@ -8,3 +8,7 @@ export interface FormType {
   text: string;
   category: string;
 }
+
+export interface TodoProps {
+  todo: string;
+}

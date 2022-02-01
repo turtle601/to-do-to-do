@@ -21,6 +21,10 @@ export const Center = styled(Flex)`
   justify-content: center;
 `;
 
+export const VCenter = styled(Flex)`
+  align-items: center;
+`;
+
 export const HCenter = styled(VFlex)`
   align-items: center;
 `;
