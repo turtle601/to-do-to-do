@@ -11,7 +11,8 @@ declare module 'styled-components' {
 
       primary: string;
       secondary: string;
-      third: string;
+      spot: string;
+      danger: string;
       bgColor: string;
       textColor: string;
 
