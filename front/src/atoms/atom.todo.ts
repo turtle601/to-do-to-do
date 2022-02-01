@@ -3,7 +3,7 @@ import { TodoType } from '../types/type';
 
 export const todosState = atom<TodoType[]>({
   key: 'todos',
-  default: [],
+  default: JSON.parse(localStorage.getItem('todos') as string),
 });
 
 export const categoryClickState = atom({
@@ -16,18 +16,20 @@ export const categoryClickState = atom({
 export const todosCategorySelector = selector({
   key: 'todosCategorySelector',
   get: ({ get }) => {
-    const todos = get(todosState);
+    localStorage.setItem('todos', JSON.stringify(get(todosState)));
+
+    const todos = JSON.parse(localStorage.getItem('todos') as string);
 
     const categories = Array.from(
       new Set(
-        todos.map(todo => {
+        todos.map((todo: TodoType) => {
           return todo.category;
         }),
       ).values(),
     );
 
     return categories.map(category => {
-      return todos.filter(todo => todo.category === category);
+      return todos.filter((todo: TodoType) => todo.category === category);
     });
   },
 });
