@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useRecoilState } from 'recoil';
+import { MdAdd } from 'react-icons/md';
 
+import { useRecoilState } from 'recoil';
 import { useForm } from 'react-hook-form';
 
 import { todosState } from '../atoms/atom.todo';
@@ -9,7 +10,7 @@ import { todosState } from '../atoms/atom.todo';
 import { FormType } from '../types/type';
 
 import { Flex, Center } from '../layout/layout';
-import { Input, Form } from '../styles/customs';
+import { Input, Form, Button } from '../styles/customs';
 
 const Input2 = styled(Input)`
   flex: 1;
@@ -53,7 +54,9 @@ const TodoInput = () => {
             {...register('category', { required: '카테고리를 정해주세요' })}
             placeholder="카테고리 입력"
           />
-          <button type="submit">할 일 입력</button>
+          <Button type="submit">
+            <MdAdd />
+          </Button>
         </Flex>
       </Form>
       <div>{errors?.text?.message}</div>
