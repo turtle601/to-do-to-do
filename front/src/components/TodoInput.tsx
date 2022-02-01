@@ -12,20 +12,6 @@ import { FormType } from '../types/type';
 import { Flex, Center } from '../layout/layout';
 import { Input, Form, Button } from '../styles/customs';
 
-const Input2 = styled(Input)`
-  flex: 1;
-`;
-
-const InputTemplate = styled(Center)`
-  width: 512px;
-
-  ${({ theme }) => {
-    return css`
-      height: ${theme.space[48]};
-    `;
-  }}
-`;
-
 const TodoInput = () => {
   const [todos, setTodos] = useRecoilState(todosState);
 
@@ -59,26 +45,22 @@ const TodoInput = () => {
           </Button>
         </Flex>
       </Form>
-      <div>{errors?.text?.message}</div>
-      <div>{errors?.category?.message}</div>
-
-      {todos.map(todo => {
-        return (
-          <ul>
-            <li>{todo.category}</li>
-          </ul>
-        );
-      })}
-
-      {todos.map(todo => {
-        return (
-          <ul>
-            <li>{todo.text}</li>
-          </ul>
-        );
-      })}
     </InputTemplate>
   );
 };
+
+const Input2 = styled(Input)`
+  flex: 1;
+`;
+
+const InputTemplate = styled(Center)`
+  width: 512px;
+
+  ${({ theme }) => {
+    return css`
+      height: ${theme.space[48]};
+    `;
+  }}
+`;
 
 export default TodoInput;
