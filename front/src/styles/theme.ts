@@ -36,7 +36,7 @@ const darkThemeColor = {
   primary: '#DDF3F5',
   secondary: '#A6DCEF',
   spot: '#F2AAAA',
-  danger: '#E3638',
+  danger: '#E36387',
   bgColor: color.gray[700],
   textColor: color.gray[50],
 };
