@@ -1,11 +1,14 @@
 import React from 'react';
 import { ChildrenProps } from '../types/type.props';
 
+import { HCenter } from '../layout/layout';
+
 const TodoTemplate = ({ children }: ChildrenProps) => {
   return (
-    <>
-      <div>{children}</div>
-    </>
+    <HCenter>
+      <div>Title</div>
+      {children}
+    </HCenter>
   );
 };
 

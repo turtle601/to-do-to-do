@@ -7,6 +7,8 @@ import { todosState } from '../atoms/atom.todo';
 
 import { FormType } from '../types/type';
 
+import { Input, Form } from '../styles/customs';
+
 const TodoInput = () => {
   const [todos, setTodos] = useRecoilState(todosState);
 
@@ -25,13 +27,17 @@ const TodoInput = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(submitTodo)}>
-        <input {...register('text', { required: '할 일을 입력하세요' })} />
-        <input
+      <Form onSubmit={handleSubmit(submitTodo)}>
+        <Input
+          {...register('text', { required: '할 일을 입력하세요' })}
+          placeholder="할 일을 입력해주세요"
+        />
+        <Input
           {...register('category', { required: '카테고리를 정해주세요' })}
+          placeholder="카테고리 입력"
         />
         <button type="submit">할 일 입력</button>
-      </form>
+      </Form>
       <div>{errors?.text?.message}</div>
       <div>{errors?.category?.message}</div>
 
