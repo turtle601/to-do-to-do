@@ -9,6 +9,7 @@ import { themeSelector } from './atoms/atom.theme';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInput from './components/TodoInput';
 import TodoCategory from './components/TodoCategory';
+import TodoList from './components/TodoList';
 
 const App = () => {
   const theme = useRecoilValue(themeSelector);
@@ -20,6 +21,7 @@ const App = () => {
       <TodoTemplate>
         <TodoInput />
         <TodoCategory />
+        <TodoList />
       </TodoTemplate>
     </ThemeProvider>
   );
