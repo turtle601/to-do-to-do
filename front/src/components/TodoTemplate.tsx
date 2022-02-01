@@ -1,15 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import { ChildrenProps } from '../types/type.props';
 
 import { HCenter } from '../layout/layout';
 
 const TodoTemplate = ({ children }: ChildrenProps) => {
   return (
-    <HCenter>
+    <TodoTemplateStyle>
       <div>Title</div>
       {children}
-    </HCenter>
+    </TodoTemplateStyle>
   );
 };
+
+const TodoTemplateStyle = styled(HCenter)``;
 
 export default TodoTemplate;
