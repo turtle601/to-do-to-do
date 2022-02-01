@@ -56,3 +56,38 @@ export const Button = styled.button`
     `;
   }}
 `;
+
+export const Tabs = styled.ul`
+  width: 512px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+`;
+
+export const Tab = styled.li`
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.1s background ease-in;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  ${({ theme }) => {
+    return css`
+      padding-left: ${theme.space[4]};
+      padding-right: ${theme.space[4]};
+
+      padding-top: ${theme.space[2]};
+      padding-bottom: ${theme.space[2]};
+      color: ${theme.color.bgColor};
+      background-color: ${theme.color.primary};
+    `;
+  }}
+`;

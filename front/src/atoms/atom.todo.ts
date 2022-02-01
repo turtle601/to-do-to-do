@@ -23,7 +23,7 @@ export const todosCategorySelector = selector({
     );
 
     return categories.map(category => {
-      return [todos.filter(todo => todo.category === category)];
+      return todos.filter(todo => todo.category === category);
     });
   },
 });
