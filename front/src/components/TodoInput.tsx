@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { MdAdd } from 'react-icons/md';
 
-import { useRecoilState } from 'recoil';
+import { errorSelector, useRecoilState } from 'recoil';
 import { useForm } from 'react-hook-form';
 
 import { todosState } from '../atoms/atom.todo';
@@ -10,7 +10,7 @@ import { todosState } from '../atoms/atom.todo';
 import { FormType } from '../types/type';
 
 import { Flex, Center } from '../layout/layout';
-import { Input, Form, Button } from '../styles/customs';
+import { Input, Form, Button, ErrorMessage } from '../styles/customs';
 
 const TodoInput = () => {
   const [todos, setTodos] = useRecoilState(todosState);
@@ -18,11 +18,20 @@ const TodoInput = () => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
     setValue,
   } = useForm<FormType>();
 
   const submitTodo = (data: FormType): void => {
+    if (data.text) {
+      setError('text', { type: 'focus' }, { shouldFocus: true });
+    }
+
+    if (data.category) {
+      setError('category', { type: 'focus' }, { shouldFocus: true });
+    }
+
     setTodos([...todos, { id: Date.now(), ...data }]);
     setValue('text', '');
     setValue('category', '');
@@ -35,6 +44,7 @@ const TodoInput = () => {
           {...register('text', { required: '할 일을 입력하세요' })}
           placeholder="할 일을 입력해주세요"
         />
+        <ErrorMessage>{errors?.text?.message}</ErrorMessage>
         <Flex>
           <Input2
             {...register('category', { required: '카테고리를 정해주세요' })}
@@ -44,6 +54,7 @@ const TodoInput = () => {
             <MdAdd />
           </Button>
         </Flex>
+        <ErrorMessage>{errors?.category?.message}</ErrorMessage>
       </Form>
     </InputTemplate>
   );

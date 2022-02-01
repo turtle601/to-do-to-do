@@ -7,6 +7,7 @@ export const Input = styled.input`
 
   ${({ theme }) => {
     return css`
+      color: ${theme.color.primary};
       padding: ${theme.space[6]};
       font-size: ${theme.fontSizes.xl};
       &:focus {
@@ -57,7 +58,22 @@ export const Button = styled.button`
   }}
 `;
 
+export const ErrorMessage = styled.div`
+  ${({ theme }) => {
+    return css`
+      margin-left: ${theme.space[5]};
+      font-size: ${theme.fontSizes.xs};
+      color: ${theme.color.danger};
+    `;
+  }}
+`;
+
 export const Tabs = styled.ul`
+  ${({ theme }) => {
+    return css`
+      margin-top: ${theme.space[5]};
+    `;
+  }}
   width: 512px;
 
   display: flex;
