@@ -23,18 +23,20 @@ const defaultTheme = {
 
 const lightThemeColor = {
   ...color,
-  primary: '#22b8cf',
-  secondary: '#324B50',
-  third: '#95B0B6',
+  primary: '#DDF3F5',
+  secondary: '#A6DCEF',
+  spot: '#F2AAAA',
+  danger: '#E3638',
   bgColor: color.gray[50],
   textColor: color.gray[700],
 };
 
 const darkThemeColor = {
   ...color,
-  primary: '#22b8cf',
-  secondary: '#324B50',
-  third: '#95B0B6',
+  primary: '#DDF3F5',
+  secondary: '#A6DCEF',
+  spot: '#F2AAAA',
+  danger: '#E3638',
   bgColor: color.gray[700],
   textColor: color.gray[50],
 };

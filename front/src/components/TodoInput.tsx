@@ -1,11 +1,30 @@
 import React from 'react';
-import { useRecoilState } from 'recoil';
+import styled, { css } from 'styled-components';
+import { MdAdd } from 'react-icons/md';
 
+import { useRecoilState } from 'recoil';
 import { useForm } from 'react-hook-form';
 
 import { todosState } from '../atoms/atom.todo';
 
 import { FormType } from '../types/type';
+
+import { Flex, Center } from '../layout/layout';
+import { Input, Form, Button } from '../styles/customs';
+
+const Input2 = styled(Input)`
+  flex: 1;
+`;
+
+const InputTemplate = styled(Center)`
+  width: 512px;
+
+  ${({ theme }) => {
+    return css`
+      height: ${theme.space[48]};
+    `;
+  }}
+`;
 
 const TodoInput = () => {
   const [todos, setTodos] = useRecoilState(todosState);
@@ -24,14 +43,22 @@ const TodoInput = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit(submitTodo)}>
-        <input {...register('text', { required: '할 일을 입력하세요' })} />
-        <input
-          {...register('category', { required: '카테고리를 정해주세요' })}
+    <InputTemplate>
+      <Form onSubmit={handleSubmit(submitTodo)}>
+        <Input
+          {...register('text', { required: '할 일을 입력하세요' })}
+          placeholder="할 일을 입력해주세요"
         />
-        <button type="submit">할 일 입력</button>
-      </form>
+        <Flex>
+          <Input2
+            {...register('category', { required: '카테고리를 정해주세요' })}
+            placeholder="카테고리 입력"
+          />
+          <Button type="submit">
+            <MdAdd />
+          </Button>
+        </Flex>
+      </Form>
       <div>{errors?.text?.message}</div>
       <div>{errors?.category?.message}</div>
 
@@ -50,7 +77,7 @@ const TodoInput = () => {
           </ul>
         );
       })}
-    </>
+    </InputTemplate>
   );
 };
 
