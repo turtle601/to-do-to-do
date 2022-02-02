@@ -66,4 +66,4 @@ const RemoveButton = styled(VCenter)`
   }}
 `;
 
-export default TodoListItem;
+export default React.memo(TodoListItem);

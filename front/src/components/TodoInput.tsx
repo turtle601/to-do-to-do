@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { MdAdd } from 'react-icons/md';
 
-import { errorSelector, useRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { useForm } from 'react-hook-form';
 
 import { todosState } from '../atoms/atom.todo';
@@ -23,7 +23,7 @@ const TodoInput = () => {
     setValue,
   } = useForm<FormType>();
 
-  const submitTodo = (data: FormType): void => {
+  const submitTodo = (data: FormType) => {
     if (data.text) {
       setError('text', { type: 'focus' }, { shouldFocus: true });
     }
@@ -74,4 +74,4 @@ const InputTemplate = styled(Center)`
   }}
 `;
 
-export default TodoInput;
+export default React.memo(TodoInput);
