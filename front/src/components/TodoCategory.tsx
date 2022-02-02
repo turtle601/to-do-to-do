@@ -1,11 +1,7 @@
 import React, { MouseEvent } from 'react';
-import { useRecoilValue, useSetRecoilState, useRecoilState } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
 
-import {
-  todosCategorySelector,
-  categoryClickState,
-  tabColorState,
-} from '../atoms/atom.todo';
+import { todosCategorySelector, categoryClickState } from '../atoms/atom.todo';
 import { TodoType } from '../types/type';
 
 import { Tabs, Tab } from '../styles/customs';
@@ -39,4 +35,4 @@ const TodoCategory = () => {
   );
 };
 
-export default TodoCategory;
+export default React.memo(TodoCategory);
