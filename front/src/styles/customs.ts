@@ -1,8 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { useRecoilValue } from 'recoil';
-import { categoryClickState } from '../atoms/atom.todo';
-
 export const Input = styled.input`
   background: none;
   border: none;

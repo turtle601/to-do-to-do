@@ -3,18 +3,12 @@ import { TodoType } from '../types/type';
 
 export const todosState = atom<TodoType[]>({
   key: 'todos',
-  default: JSON.parse(localStorage.getItem('todos') as string),
+  default: JSON.parse(localStorage.getItem('todos') as string) || [],
 });
 
 export const categoryClickState = atom({
   key: 'categoryClick',
   default: 0,
-});
-
-// 클릭한 카테고리 tab 글씨색 변경을 위한 state
-export const tabColorState = atom({
-  key: 'tabColor',
-  default: '#2D3748',
 });
 
 // selector로 각 카테고리 찾아서 재정의하기
