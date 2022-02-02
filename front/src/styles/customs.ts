@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
 
+import { useRecoilValue } from 'recoil';
+import { categoryClickState } from '../atoms/atom.todo';
+
 export const Input = styled.input`
   background: none;
   border: none;
@@ -82,7 +85,7 @@ export const Tabs = styled.ul`
   gap: 10px;
 `;
 
-export const Tab = styled.li`
+export const Tab = styled.li<{ idx: number }>`
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -95,14 +98,21 @@ export const Tab = styled.li`
     opacity: 0.8;
   }
 
+  ${props => {
+    return css`
+      &:nth-child(${props.idx + 1}) {
+        color: ${props.theme.color.spot};
+      }
+    `;
+  }}
+
   ${({ theme }) => {
     return css`
       padding-left: ${theme.space[4]};
       padding-right: ${theme.space[4]};
-
+      color: ${theme.color.bgColor};
       padding-top: ${theme.space[2]};
       padding-bottom: ${theme.space[2]};
-      color: ${theme.color.bgColor};
       background-color: ${theme.color.primary};
     `;
   }}
