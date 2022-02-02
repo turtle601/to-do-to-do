@@ -1,24 +1,24 @@
 # to-do-to-do
 
-🖱 Purpose
+## 🖱 Purpose
 TodoList had Category
 
-🌏 WebSite
+## 🌏 WebSite
 https://turtle601.github.io/to-do-to-do
 
-🌁 Background
-이 프로젝트는 normad-corder React Master Course 챌린지 과제 제출용입니다.
+## 🌁 Background
+이 프로젝트는 normad-corder React Master Course 챌린지 과제 제출용입니다. <br />
 혹시라도 저작권 및 문제가 생긴다면 바로 Private Repository로 돌리도록 하겠습니다.
 
-🐕‍🦺 Usage
-React.js
-Typescript
-Styled-component
-react-hook-form(input 라이브러리)
-recoil(전역 상태 라이브러리)
-gh-pages (배포)
+## 🐕‍🦺 Usage
+- React.js
+- Typescript
+- Styled-component
+- react-hook-form(input 라이브러리)
+- recoil(전역 상태 라이브러리)
+- gh-pages (배포)
 
-ver 1.
+## ver 1.
 `구현 기간` : 2022.01.31 ~ 2022.02.02
 
 `신경써서 구현했던 것` :
