@@ -40,10 +40,4 @@ react-hook-form을 사용하면서 실제로 우리가 input을 구현할 때 �
 issue탭과 project탭의 활용
 main을 배포용, develop 개발용, develop위의 여러 브랜치를 feature/..., chores/... 등으로 이름지어 개발을 진행하고 merge 시키는 식으로 진행하였습니다.
 
-`아쉬웠던 점` :
-
-- 3일 안에 제출이었기 때문에 많은 기능을 구현하지 못했던 점(check기능 구현 못함)
-- 성능 최적화가 이루어지지 않았다. 
-useCallback을 사용하지 않았다. 
-Recoil의 경우 전용 useRecoilCallback이라는 함수가 있는 데 이를 사용할 시 snap샷 구현도 별도로 필요하기 때문에 시간 관계상 하지 않았다. 
 
